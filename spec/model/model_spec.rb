@@ -1,4 +1,4 @@
-require 'spec_helper'
+require_relative '../spec_helper'
 
 describe "User" do
 
@@ -10,6 +10,7 @@ describe "User" do
       :email=>"blobs@crap.com",
       :password=>"umm so need to use bcrypt here i guess"
     )
+
   end
 
   it "has a username" do
