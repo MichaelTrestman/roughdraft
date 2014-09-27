@@ -40,8 +40,8 @@ body,
 	width: 15%;
 }
 
-.spots li, .collecitons li {
-	display: none;
+.spots li, .collections li {
+
 }
 
 .spots:hover, .collections:hover{
@@ -49,20 +49,26 @@ body,
 	height: 55%;
 	width: 25%;
 }
-.spots li:hover, .collecitons li:hover {
-	display: block;
+
+.spots:hover li, .collections:hover li {
+	/*display: block;*/
+	font-size: 1.5em;
+	color: white;
+}
+
+.spots li:hover, .collections li:hover {
+	/*display: block;*/
+}
+
+.spots ul, .collections ul {
+	text-decoration: none;
+	height: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 
-
-h1 {
-	/*font-size: 3em;*/
-}
-
-header h4 {
-	margin: 0%;
-	padding: 0%;
-}
 
 
 #map-canvas {
@@ -72,16 +78,15 @@ header h4 {
 }
 
 .button {
-	border: solid 1px black;
-	border-radius: 29%;
+	/*border: solid 1px black;*/
+	/*border-radius: 29%;*/
 }
 .button {
-		-webkit-transition-duration: .4s;
+	-webkit-transition-duration: .4s;
+	color: rgba(1, 1, 1, 0);
+	font-size: 0.5em;
 }
 
-.button:hover {
-	font-size: 1.5em;
-	color: green;
-}
+
 
 

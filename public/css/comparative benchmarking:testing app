@@ -1,0 +1,14 @@
+comparative benchmarking/testing app
+
+as a user, i want to submit a block of tests for coders to try to satisfy.
+
+as a user, i want to submit a solution to a test-blocks previously submitted by users.
+
+as a user, i want to be able to rate a solution to a  block of tests for readability.
+
+as a user, i want to be able to browse solutions to a block of tests by readability-score and benchmarking stats.
+
+as a user, i want to be able to easily tweak variable names in an archived block of code to suit my purposes and then export it to use in my own project.
+
+as a user, i want to be able to easily create new blocks of tests by composing previously archived blocks of tests, and to then be able to see a collection of solutions that will satisfy the newly combined blocks of tests(with their readability and benchmarking scores). in order to compose blocks of code easily, i'll need to be able to reassign variable names super easily--i.e. there will need to be a super easy tool for listing all the variable names like off to the side in a panel, and then just grabbing it and reassigning it all together. it would also be nice to be able to like zoom out on the file and see all the occurrences highlit--to do that with several different variables that you could assign colors for.
+

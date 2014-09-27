@@ -37,28 +37,5 @@ $(document).ready(function() {
 
     });
 
-
-
-    // google.maps.event.addListener(marker, 'mouseover', function() {
-
-    //   var projection = overlay.getProjection();
-    //   var pixel = projection.fromLatLngToContainerPixel(marker.getPosition());
-    //   // use pixel.x, pixel.y ... (after some rounding)
-
-    //   console.log(projection)
-
-    // });
-
-
-
-
-
-
-
-
-
-
-
-
 });
 
