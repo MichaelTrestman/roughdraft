@@ -7,7 +7,7 @@
 		<div class="spots">
 			<h2> Spots</h2>
 				<ul>
-					<li class="button">
+					<li id="create-new-spot-button" class="button">
 						Create New Spot
 					</li>
 					<li class="button">
@@ -19,20 +19,48 @@
 
 				</ul>
 		</div>
-		<div class="collections">
-				<h2> Collections</h2>
-				<ul>
-					<li class="button">
-						Create New Collection
-					</li>
-					<li class="button">
-						List Archived Collections
-					</li>
-					<li class="button">
-						Share a Collection
-					</li>
 
-				</ul>
+		<div class="collections">
+			<h2> Collections</h2>
+			<ul>
+				<li class="button">
+					Create New Collection
+				</li>
+				<li class="button">
+					List Archived Collections
+				</li>
+				<li class="button">
+					Share a Collection
+				</li>
+			</ul>
+		</div>
+
+		<div class="spot-creation-panel">
+			<h2> Spot Creator</h2>
+			<button class="exit-button">exit</button>
+
+			<form method="post" action="/delete_user">
+			  	<h3>Title</h3>
+			  <input type="string" name="title">
+			  </input>
+			  <h3>Description</h3>
+			  <input class="new-description" name="descripton">
+
+			  </input>
+			</form>
+
+
+			<!-- <ul>
+				<li class="button">
+					Create New Collection
+				</li>
+				<li class="button">
+					List Archived Collections
+				</li>
+				<li class="button">
+					Share a Collection
+				</li>
+			</ul> -->
 		</div>
 
 

@@ -1,0 +1,23 @@
+.spot-creation-panel {
+  /*display: none;*/
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  z-index: 10;
+  color: white;
+  height: 70%;
+  width: 35%;
+  text-align: center;
+  background-color: rgba(05, 05, 05, .2);
+
+}
+.spot-creation-panel form{
+  color: black;
+  height: 70%;
+}
+.new-description {
+  display: block;
+  height: 70%;
+  width: 90%;
+  margin: auto;
+}
