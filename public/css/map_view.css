@@ -5,7 +5,7 @@ body,
 	height: 100%;
 	font-family: 'Libre Baskerville', serif;
 }
-
+* {font-family: 'Crimson Text', serif;}
 
 .spots{
 	/*display: none;*/
@@ -13,7 +13,6 @@ body,
   bottom: 5%;
   right: 5%;
   z-index: 10;
-
 	color: white;
 	height: 60%;
 	width: 15%;
@@ -29,17 +28,27 @@ body,
 	background-color: rgba(65, 65, 05, .05);
 
 }
+.submit-button {
+	position: fixed;
+	bottom: 5%;
+	color: white;
+	left: 35%;
+	height: 5%;
+	width: 5%;
+	background-color: rgba(65, 65, 05, .05);
+
+}
+
+
 .collections{
 	position: fixed;
   bottom: 5%;
   left: 5%;
   z-index: 10;
-
 	color: white;
 	height: 35%;
 	width: 25%;
 	text-align: center;
-
 }
 
 .spots, .collections{

@@ -1,84 +1,54 @@
-
-
-</head>
-
-<body >
-	<div class="container">
-		<div class="spots">
-			<h2> Spots</h2>
-				<ul>
-					<li id="create-new-spot-button" class="button">
-						Create New Spot
-					</li>
-					<li class="button">
-						List Archived Spots
-					</li>
-					<li class="button">
-						Share a Spot
-					</li>
-
-				</ul>
-		</div>
-
-		<div class="collections">
-			<h2> Collections</h2>
+<div class="container">
+	<div class="spots">
+		<h2> Spots</h2>
 			<ul>
-				<li class="button">
-					Create New Collection
+				<li id="create-new-spot-button" class="button">
+					Create New Spot
 				</li>
 				<li class="button">
-					List Archived Collections
+					List Archived Spots
 				</li>
 				<li class="button">
-					Share a Collection
+					Share a Spot
 				</li>
+
 			</ul>
-		</div>
-
-		<div class="spot-creation-panel">
-			<h2> Spot Creator</h2>
-			<button class="exit-button">exit</button>
-
-			<form method="post" action="/delete_user">
-			  	<h3>Title</h3>
-			  <input type="string" name="title">
-			  </input>
-			  <h3>Description</h3>
-			  <input class="new-description" name="descripton">
-
-			  </input>
-			</form>
-
-
-			<!-- <ul>
-				<li class="button">
-					Create New Collection
-				</li>
-				<li class="button">
-					List Archived Collections
-				</li>
-				<li class="button">
-					Share a Collection
-				</li>
-			</ul> -->
-		</div>
-
-
-		<div id="map-canvas">
-		</div>
-
-
 	</div>
 
+	<div class="collections">
+		<h2> Collections</h2>
+		<ul>
+			<li class="button">
+				Create New Collection
+			</li>
+			<li class="button">
+				List Archived Collections
+			</li>
+			<li class="button">
+				Share a Collection
+			</li>
+		</ul>
+	</div>
 
+	<div class="spot-creation-panel">
+		<h2> Spot Creator</h2>
+		<button class="exit-button">exit</button>
 
-<script>
+		<form class="spot-creation-form">
+		  	<h3>Title</h3>
+		  <input type="string" name="title">
+		  </input>
+		  <h3>Description</h3>
+		  <input class="new-description" name="descripton">
+		  </input>
+		  <input class="submit-button" type="submit" value="submit">
+			</input>
+		</form>
+		<p>
+			x: <span class="x-coord"></span> y: <span class="y-coord"></span>
+		</p>
+	</div>
 
-
-
-</script>
-
-
-</body>
-
-</html>
+	<div id="map-canvas">
+	</div>
+</div>
