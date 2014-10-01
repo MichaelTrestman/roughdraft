@@ -1,18 +1,20 @@
 <div class="container">
 	<div class="spots">
-		<h2> Spots</h2>
-			<ul>
-				<li id="create-new-spot-button" class="button">
-					Create New Spot
-				</li>
-				<li class="button">
-					List Archived Spots
-				</li>
-				<li class="button">
-					Share a Spot
-				</li>
+		<h2> Spots </h2>
+		<!-- <h3>Current Collection name</h3> -->
+			<div id="create-new-spot-button" class="button">
+				<h3>Create New Spot</h3>
+			</div>
 
-			</ul>
+			<div class="button">
+				<h3>List Archived Spots</h3>
+			</div>
+
+			<div id="spot-list">
+				<ul>
+				</ul>
+			</div>
+
 	</div>
 
 	<div class="collections">
@@ -22,10 +24,10 @@
 				Create New Collection
 			</li>
 			<li class="button">
-				List Archived Collections
+				My Collections
 			</li>
 			<li class="button">
-				Share a Collection
+				Public Collections
 			</li>
 		</ul>
 	</div>
@@ -51,4 +53,12 @@
 
 	<div id="map-canvas">
 	</div>
+
+	<div class="address-panel">
+		<form id="address-input-form">
+			<input id="address-input" style="color: black;" name="address"></input>
+			<input type="submit" value="address"></input>
+		</form>
+	</div>
+
 </div>

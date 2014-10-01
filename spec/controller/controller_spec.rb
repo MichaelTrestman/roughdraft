@@ -5,7 +5,6 @@ describe "/signup" do
 end
 describe "/login" do
   it "checks the password and username to see if they good or what" do
-
   end
 end
 describe "/dashboard" do

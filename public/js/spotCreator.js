@@ -5,8 +5,6 @@ function spotCreator(){
 
   $('.spot-creation-panel').css('visibility', 'visible')
 
-
-
   mapCLicker = google.maps.event.addListener(map, "click", function (
     event) {
 
@@ -40,16 +38,17 @@ function spotCreator(){
 
     $.ajax({
       type: 'post',
-      url: '/spot/create',
+      url: '/spots/create',
       dataType: 'json',
       data: data
 
     }).done(function(serverData){
 
-      alert(serverData.message)
+      alert(serverData.new_spot_id)
 
     }).always(function(){
 
     })
   })
+    updateSpots();
 }

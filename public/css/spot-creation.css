@@ -8,16 +8,16 @@
   height: 90%;
   width: 35%;
   text-align: center;
-  background-color: rgba(05, 05, 05, .2);
-
+  background-color: rgba(05, 05, 05, .6);
 }
+
 .spot-creation-panel form{
   color: black;
   height: 70%;
 }
 .new-description {
   display: block;
-  height: 70%;
-  width: 90%;
+  height: 50%;
+  width: 70%;
   margin: auto;
 }

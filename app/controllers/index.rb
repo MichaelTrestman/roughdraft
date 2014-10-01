@@ -2,19 +2,19 @@ get '/' do
   erb :map_view
 end
 
-post '/spot/create' do
+post '/spots/create' do
 
-  p params[:description]
-  p params[:title]
-  p params[:longitude]
-  p params[:latitude]
-
-  Spot.create(
+  new_spot = Spot.create(
     :description=>params[:description],
     :title=>params[:title],
+    :lng=>params[:longitude],
+    :lat=>params[:latitude]
 
   )
 
-  {message: "hello!"}.to_json
+  {new_spot_id: new_spot.id}.to_json
 end
 
+get '/spots/list' do
+  Spot.all.to_json
+end

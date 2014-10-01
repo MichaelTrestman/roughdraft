@@ -1,5 +1,5 @@
+updateSpots();
 spotBrowser();
-
 
 $('.exit-button').on('click', function(){
   spotCreator();
