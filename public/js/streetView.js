@@ -1,3 +1,55 @@
+
+
+
+
+// // panorama.setVisible(true)
+
+
+// // x=map.getCenter()
+// // panorama.setPosition(x)
+
+// var somePlace = new google.maps.LatLng(12, 12)
+// var panorama;
+// panorama = map.getStreetView();
+//   panorama.setPosition(somePlace);
+//   panorama.setPov({
+//     heading: 265,
+//     pitch:0}
+//   );
+// }
+
+
+$('#street-view-on').on('click', function(){
+
+  var panorama = map.getStreetView();
+  panorama.setPosition(map.getCenter())
+  panorama.setVisible(true)
+  panorama.setPov({
+    heading:0,
+    pitch:0
+  })
+  map.setStreetView(panorama);
+})
+
+$('#street-view-off').on('click', function(){
+
+  var panorama = map.getStreetView();
+
+  panorama.setVisible(false)
+
+})
+$('#exit-spot-display').on('click', function(){
+  alert('yay')
+  $('.spot-display-panel').css('visibility', 'hidden')
+  spotBrowser();
+
+})
+
+
+
+
+
+
 function streetView(){
 
   //set css to streetview mode...

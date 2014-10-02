@@ -1,16 +1,23 @@
-$('#spot-list ul').on('click', 'li', function(e){
+var currentSpot;
 
-  var this_id = $(this).attr('id')
-  this_id = parseInt(this_id.split('-')[2]);
 
-  var this_spot = getSpotbyID(this_id);
+function setSpotSelector(){
 
-  console.log(this_spot)
-  // displaySpot(this_spot)
+  $('#spot-list ul').on('click', 'li', function(e){
 
-  $('.spot-display-panel').css("visibility", "visible")
+    var this_id = $(this).attr('id')
+    this_id = parseInt(this_id.split('-')[2]);
 
-})
+    var this_spot = getSpotbyID(this_id);
+    currentSpot = this_spot
+
+    console.log(this_spot)
+    // displaySpot(this_spot)
+
+    $('.spot-display-panel').css("visibility", "visible")
+
+  })
+}
 
 function getSpotbyID(id){
 

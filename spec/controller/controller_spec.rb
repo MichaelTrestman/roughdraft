@@ -17,7 +17,6 @@ describe "/display/?map_id" do
 
   end
   it "allows some user tweaking of the display" do
-
   end
 end
 
@@ -37,6 +36,10 @@ describe "/list/create" do
 end
 describe "spot/create" do
   it "allows the user to create a new Spot" do
+
+    spots_count = Spot.count
+
+    post '/spots/create', {}
 
   end
   it "inptus the name" do
