@@ -37,6 +37,12 @@ function updateSpotbyID(id){
 
   }).done(function(serverData){
     currentSpot = JSON.parse(serverData)
+    currentSpot.lat = parseInt(currentSpot.lat)
+    currentSpot.lng = parseInt(currentSpot.lng)
+
+    if (currentSpot.lat)
+    map.setCenter(new google.maps.LatLng(currentSpot.lat, currentSpot.lng))
+
 
     console.log(currentSpot)
 
@@ -45,6 +51,9 @@ function updateSpotbyID(id){
     $('#spot-display-panel #spot-description').text(currentSpot.description)
 
     $('#spot-display-panel #address').text(currentSpot.address)
+
+    $('.lat').text(currentSpot.lat.toString())
+    $('.lng').text(currentSpot.lng.toString())
 
     $('.spot-creation-panel').css("visibility", "hidden")
 

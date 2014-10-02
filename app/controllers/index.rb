@@ -10,7 +10,6 @@ post '/spots/create' do
     :title=>params[:title],
     :lng=>params[:longitude],
     :lat=>params[:latitude]
-
   )
 
   {new_spot_id: new_spot.id}.to_json

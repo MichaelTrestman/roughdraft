@@ -105,8 +105,9 @@ body,
 
 
 .button {
-	border: solid 1px black;
-	border-radius: 29%;
+	/*border: solid 1px black;*/
+	/*border-radius: 29%;*/
+	padding: 1%;
 }
 .button {
 	-webkit-transition-duration: .4s;
@@ -136,7 +137,7 @@ body,
 	font-size: 2em;
 
 }
-#spot-list:hover {
+#spot-list {
 
 	visibility: visible;
 	height: 60%;

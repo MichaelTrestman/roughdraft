@@ -4,10 +4,11 @@ function spotCreator(){
   google.maps.event.clearListeners(map);
 
   $('#spot-display-panel').css('visibility', 'hidden')
-
+  $('.spot-creation-form').css('visibility', 'visible')
   $('.spot-creation-panel').css('visibility', 'visible')
 
-  mapCLicker = google.maps.event.addListener(map, "click", function (
+
+  google.maps.event.addListener(map, "click", function (
     event) {
 
     var latitude = event.latLng.lat(),
@@ -17,7 +18,7 @@ function spotCreator(){
         $('.x-coord').text(longitude)
         $('.y-coord').text(latitude)
 
-    var marker = new google.maps.Marker({
+      var marker = new google.maps.Marker({
       position: event.latLng,
       map: map,
       title: 'Hello World!'
@@ -29,16 +30,18 @@ function spotCreator(){
     spotBrowser();
   })
 
-  $('.spot-creation-form').on('submit', function(event){
+  $('.spot-creation-form').on('submit', function(e){
+    e.preventDefault();
+    console.log('submitting creation form!')
 
-    event.preventDefault();
+
 
     form = $(this)
     title = form.children('.title').val();
     description = form.children('.new-description').val();
     address = form.children('.new-address').val();
-    latitude = $('.x-coord').text();
-    longitude = $('.y-coord').text();
+    latitude = parseInt($('.y-coord').text());
+    longitude = parseInt($('.x-coord').text());
 
     data = {
       title: title,
@@ -64,6 +67,10 @@ function spotCreator(){
     }).always(function(){
 
     })
+    $('.spot-creation-form').css('visibility', 'hidden')
+      $('.x-coord').text('')
+      $('.y-coord').text('')
+      $('.spot-creation-form input').val('')
   })
 
 }
