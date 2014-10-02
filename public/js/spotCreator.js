@@ -1,4 +1,5 @@
 
+
 function spotCreator(){
 
   google.maps.event.clearListeners(map);
@@ -18,11 +19,8 @@ function spotCreator(){
         $('.x-coord').text(longitude)
         $('.y-coord').text(latitude)
 
-      var marker = new google.maps.Marker({
-      position: event.latLng,
-      map: map,
-      title: 'Hello World!'
-    });
+        marker.setPosition(event.latLng)
+        marker.setVisible(true)
   });
 
 

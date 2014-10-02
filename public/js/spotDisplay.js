@@ -1,6 +1,5 @@
 var currentSpot;
 
-
 function setSpotSelector(){
 
   $('#spot-list ul').on('click', 'li', function(e){
@@ -58,6 +57,9 @@ function updateSpotbyID(id){
     $('.spot-creation-panel').css("visibility", "hidden")
 
     $('.spot-display-panel').css("visibility", "visible")
+
+    marker.setPosition(new google.maps.LatLng(currentSpot.lat, currentSpot.lng))
+    marker.setVisible(true)
 
   }).fail(function(){alert('some shit went wrong with aaaaajax')})
 
