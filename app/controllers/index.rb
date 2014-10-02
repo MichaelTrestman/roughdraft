@@ -6,6 +6,7 @@ post '/spots/create' do
 
   new_spot = Spot.create(
     :description=>params[:description],
+    :address=>params[:address],
     :title=>params[:title],
     :lng=>params[:longitude],
     :lat=>params[:latitude]
@@ -19,9 +20,16 @@ get '/spots/list' do
   Spot.all.to_json
 end
 
-# maybe its a string instead of a nuuuuuuuuuuuuuuuumbeeeeer
+
 post '/spots/find' do
-  require 'debugger'
-  debugger
-  {spot: Spot.find(params[:id].to_i)}.to_json
+
+  spot = Spot.find(params[:id].to_i)
+
+  {
+    title: spot.title,
+    description: spot.description,
+    address: spot.address,
+    lat: spot.lat,
+    lng: spot.lng
+  }.to_json
 end

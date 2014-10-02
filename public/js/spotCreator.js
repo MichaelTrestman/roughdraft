@@ -3,6 +3,8 @@ function spotCreator(){
 
   google.maps.event.clearListeners(map);
 
+  $('#spot-display-panel').css('visibility', 'hidden')
+
   $('.spot-creation-panel').css('visibility', 'visible')
 
   mapCLicker = google.maps.event.addListener(map, "click", function (
@@ -31,10 +33,21 @@ function spotCreator(){
 
     event.preventDefault();
 
-    data = $(this).serialize()
+    form = $(this)
+    title = form.children('.title').val();
+    description = form.children('.new-description').val();
+    address = form.children('.new-address').val();
+    latitude = $('.x-coord').text();
+    longitude = $('.y-coord').text();
 
-    data["latitude"] =  $('.x-coord').text();
-    data["longitude"] = $('.y-coord').text();
+    data = {
+      title: title,
+      description: description,
+      address: address,
+      latitude: latitude,
+      longitude: longitude
+    }
+    console.log(data)
 
     $.ajax({
       type: 'post',
@@ -43,12 +56,14 @@ function spotCreator(){
       data: data
 
     }).done(function(serverData){
-
-      alert(serverData.new_spot_id)
+      updateSpots();
+      spotBrowser();
+    }).fail(function(){
+      alert('oh fuck spot creation failed!!')
 
     }).always(function(){
 
     })
   })
-    updateSpots();
+
 }

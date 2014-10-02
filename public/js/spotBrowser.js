@@ -26,3 +26,6 @@ $('#spot-list ul li').on('click', function(){
 
 
 })
+
+
+//make it so that every time you display the list of spots it clears it out so there aren't a stack of redundant ones!

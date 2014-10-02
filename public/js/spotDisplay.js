@@ -8,27 +8,48 @@ function setSpotSelector(){
     var this_id = $(this).attr('id')
     this_id = parseInt(this_id.split('-')[2]);
 
-    var this_spot = getSpotbyID(this_id);
-    currentSpot = this_spot
+    // displaySpot(this_id)
 
-    console.log(this_spot)
+    updateSpotbyID(this_id);
+
+    // currentSpot = this_spot
+
+    // console.log(this_spot)
     // displaySpot(this_spot)
 
-    $('.spot-display-panel').css("visibility", "visible")
+
 
   })
 }
 
-function getSpotbyID(id){
+function displaySpot(spot_id){
+}
+
+
+function updateSpotbyID(id){
 
   $.ajax({
 
-  type: 'post',
-  url: '/spots/find',
-  data: {id: id}
+    type: 'post',
+    url: '/spots/find',
+    datatype: 'json',
+    data: {id: id}
 
   }).done(function(serverData){
-    return serverData
+    currentSpot = JSON.parse(serverData)
+
+    console.log(currentSpot)
+
+    $('#spot-display-panel #spot-title').text(currentSpot.title)
+
+    $('#spot-display-panel #spot-description').text(currentSpot.description)
+
+    $('#spot-display-panel #address').text(currentSpot.address)
+
+    $('.spot-creation-panel').css("visibility", "hidden")
+
+    $('.spot-display-panel').css("visibility", "visible")
+
   }).fail(function(){alert('some shit went wrong with aaaaajax')})
 
 }

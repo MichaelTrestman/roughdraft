@@ -6,6 +6,7 @@ class CreateSpots < ActiveRecord::Migration
       t.string :description
       t.decimal :lat
       t.decimal :lng
+      t.string :address
     end
   end
 end

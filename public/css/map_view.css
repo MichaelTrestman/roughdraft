@@ -60,7 +60,6 @@ body,
 
 .spots ul, .collections ul {
 	text-decoration: none;
-	height: 60%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -98,10 +97,6 @@ body,
 }
 
 
-
-
-
-
 #map-canvas {
 	float: right;
 	width: 100%;
@@ -110,8 +105,8 @@ body,
 
 
 .button {
-	/*border: solid 1px black;*/
-	/*border-radius: 29%;*/
+	border: solid 1px black;
+	border-radius: 29%;
 }
 .button {
 	-webkit-transition-duration: .4s;

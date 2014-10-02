@@ -39,7 +39,7 @@ $('#street-view-off').on('click', function(){
 
 })
 $('#exit-spot-display').on('click', function(){
-  alert('yay')
+
   $('.spot-display-panel').css('visibility', 'hidden')
   spotBrowser();
 
