@@ -10,9 +10,10 @@ function updateSpots(){
 
   }).done(function(serverData){
 
-    serverData
+    // serverData
     for (var i = 0; i < serverData.length; i++) {
-      $('#spot-list ul').append("<li>" + serverData[i].title + "</li>");
+      thisSpot = serverData[i]
+      $('#spot-list ul').append("<li id='spot-list-"+ thisSpot.id +"'>" + thisSpot.title + "</li>");
     };
 
   }).always(function(){

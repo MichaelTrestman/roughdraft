@@ -18,3 +18,10 @@ end
 get '/spots/list' do
   Spot.all.to_json
 end
+
+# maybe its a string instead of a nuuuuuuuuuuuuuuuumbeeeeer
+post '/spots/find' do
+  require 'debugger'
+  debugger
+  {spot: Spot.find(params[:id].to_i)}.to_json
+end
