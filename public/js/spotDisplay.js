@@ -52,7 +52,6 @@ function updateSpotbyID(id){
   })
     map.setCenter(new google.maps.LatLng(currentSpot.lat, currentSpot.lng))
 
-
     console.log(currentSpot)
 
     $('#spot-display-panel #spot-title').text(currentSpot.title)
@@ -60,6 +59,9 @@ function updateSpotbyID(id){
     $('#spot-display-panel #spot-description').text(currentSpot.description)
 
     $('#spot-display-panel #address').text(currentSpot.address)
+    $('#link').text(currentSpot.link)
+    var link = "http://" + currentSpot.link
+    $('#link').attr('href', link)
 
     $('.lat').text(currentSpot.lat.toString())
     $('.lng').text(currentSpot.lng.toString())

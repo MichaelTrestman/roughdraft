@@ -18,7 +18,6 @@ var getPOV = function(){
     heading: povHeading, pitch: povPitch
   }
 
-
   return {position: position, pov: poV}
 }
 
@@ -47,10 +46,6 @@ var setPOV = function(){
 //   );
 // }
 
-
-
-
-
 $('#street-view-on').on('click', function(){
 
   panorama.setPosition( new google.maps.LatLng(current_pov.position.k, current_pov.position.B))
@@ -72,8 +67,6 @@ $('#street-view-on').on('click', function(){
 })
 
 
-
-
 $('#street-view-off').on('click', function(){
 
   var panorama = map.getStreetView();
@@ -88,11 +81,6 @@ $('#exit-spot-display').on('click', function(){
   spotBrowser();
 
 })
-
-
-
-
-
 
 function streetView(){
 
@@ -116,10 +104,6 @@ function streetView(){
     }
   };
 
-
-
   var panorama = new google.maps.StreetViewPanorama(document.getElementById("map-canvas"), panoramaOptions);
-
   map.setStreetView(panorama);
-
 }

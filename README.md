@@ -1,5 +1,9 @@
 functionalities to add:
 
+drag-sortable list and hotkeys to cycle through
+
+
+
 slide show style next/prev keyboard commands to cycle through a collection.
 also, implement collections.
 it would be rad to have keyboard shortcuts to swap around though!! that would be ill.

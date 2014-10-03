@@ -82,6 +82,7 @@ function spotCreator(){
       title = form.children('.title').val();
       description = form.children('.new-description').val();
       address = form.children('.new-address').val();
+      link = form.children('.new-link').val();
       latitude = parseFloat($('.y-coord').text());
       longitude = parseFloat($('.x-coord').text());
 
@@ -91,6 +92,7 @@ function spotCreator(){
         address: address,
         latitude: latitude,
         longitude: longitude,
+        link: link,
         pov: JSON.stringify(current_pov)
       }
       console.log(data)
