@@ -31,6 +31,12 @@ post '/spots/find' do
     address: spot.address,
     lat: spot.lat,
     lng: spot.lng,
-    pov: spot.pov
+    pov: spot.pov,
+    id: spot.id
   }.to_json
+end
+
+delete '/spots/delete' do
+  Spot.destroy(params[:id].to_i)
+  'yay'
 end

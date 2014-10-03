@@ -28,6 +28,15 @@ body,
 	background-color: rgba(65, 65, 05, .05);
 
 }
+.delete-spot-button {
+	position: fixed;
+	top: 5%;
+	left: 45%;
+	height: 5%;
+	width: 5%;
+	background-color: rgba(65, 65, 05, .05);
+
+}
 
 
 .collections{

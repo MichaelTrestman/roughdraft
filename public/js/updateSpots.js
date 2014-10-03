@@ -9,7 +9,7 @@ function updateSpots(){
   data: data
 
   }).done(function(serverData){
-
+    console.log('list updated!')
     // serverData
     $('#spot-list ul li').remove();
 
