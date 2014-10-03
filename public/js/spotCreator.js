@@ -26,13 +26,12 @@ function spotCreator(){
 
   $('.exit-button').on('click', function(){
     spotBrowser();
+    marker.setVisible(false)
   })
 
   $('.spot-creation-form').on('submit', function(e){
     e.preventDefault();
     console.log('submitting creation form!')
-
-
 
     form = $(this)
     title = form.children('.title').val();
@@ -59,6 +58,7 @@ function spotCreator(){
     }).done(function(serverData){
       updateSpots();
       spotBrowser();
+      $('.spot-creation-form').off('submit')
     }).fail(function(){
       alert('oh fuck spot creation failed!!')
 

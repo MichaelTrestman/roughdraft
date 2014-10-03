@@ -21,3 +21,4 @@ var marker = new google.maps.Marker({
     });
 
 marker.setVisible(false);
+var panorama = map.getStreetView();

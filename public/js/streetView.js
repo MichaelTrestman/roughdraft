@@ -1,3 +1,11 @@
+var getPOV = function(){
+
+  position = panorama.getPosition();
+  pov = panorama.getPov();
+
+}
+
+
 
 
 
@@ -21,7 +29,6 @@
 
 $('#street-view-on').on('click', function(){
 
-  var panorama = map.getStreetView();
   panorama.setPosition(map.getCenter())
   panorama.setVisible(true)
   panorama.setPov({
@@ -31,6 +38,9 @@ $('#street-view-on').on('click', function(){
   map.setStreetView(panorama);
 })
 
+
+
+
 $('#street-view-off').on('click', function(){
 
   var panorama = map.getStreetView();
@@ -39,6 +49,7 @@ $('#street-view-off').on('click', function(){
 
 })
 $('#exit-spot-display').on('click', function(){
+  marker.setVisible(false)
 
   $('.spot-display-panel').css('visibility', 'hidden')
   spotBrowser();

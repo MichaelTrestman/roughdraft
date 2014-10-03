@@ -1,3 +1,15 @@
+functionalities to add:
+
+
+POVs attached to spots
+  but how? the prob is that not every map location can have a pov. so do you:
+    have povs be a seperate, optional aspect of a spot
+
+
+
+
+
+
 > **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
 
 ### Purpose
