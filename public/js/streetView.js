@@ -1,3 +1,6 @@
+var crazyVolcanoPlace ={"position":{"k":42.497667,"B":141.14683300000002},"pov":{"heading":108.15742692732572,"pitch":12.716486667265169}}
+
+
 var positionk, positionB, povHeading, povPitch;
 
 var getPOV = function(){
@@ -45,15 +48,19 @@ var setPOV = function(){
 // }
 
 
+
 $('#street-view-on').on('click', function(){
 
   panorama.setPosition(currentSpot.pov.position)
-  panorama.setVisible(true)
+
   panorama.setPov({
     heading:0,
     pitch:0
   })
   map.setStreetView(panorama);
+  panorama.setVisible(true)
+  console.log("panorama launched:")
+  console.log(panorama)
 })
 
 

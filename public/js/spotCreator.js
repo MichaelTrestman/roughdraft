@@ -5,14 +5,9 @@ function spotCreator(){
   google.maps.event.clearListeners(map);
 
 
-
-
-
-
   $('#spot-display-panel').css('visibility', 'hidden')
   $('.spot-creation-form').css('visibility', 'visible')
   $('.spot-creation-panel').css('visibility', 'visible')
-
 
 
   var this_pov;
@@ -44,45 +39,70 @@ function spotCreator(){
 
   $('.spot-creation-form').on('submit', function(e){
     e.preventDefault();
-    console.log('submitting creation form!')
 
-    form = $(this)
-    title = form.children('.title').val();
-    description = form.children('.new-description').val();
-    address = form.children('.new-address').val();
-    latitude = parseInt($('.y-coord').text());
-    longitude = parseInt($('.x-coord').text());
+    var form = $(this);
+    var fields = form.children('input')
 
-    data = {
-      title: title,
-      description: description,
-      address: address,
-      latitude: latitude,
-      longitude: longitude,
-      pov: JSON.stringify(this_pov)
-    }
-    console.log(data)
+    var allTheFieldsAreFilled = true;
 
-    $.ajax({
-      type: 'post',
-      url: '/spots/create',
-      dataType: 'json',
-      data: data
+    // $.each(fields, function(index, field){
+    //   field.val() == "" ? allTheFieldsAreFilled = false : console.log('field verified')
+    // })
 
-    }).done(function(serverData){
-      updateSpots();
-      spotBrowser();
-      $('.spot-creation-form').off('submit')
-    }).fail(function(){
-      alert('oh fuck spot creation failed!!')
+    $('.spot-creation-form').children('.new-address').first().val() === "" ? allTheFieldsAreFilled = false : console.log('field verified')
 
-    }).always(function(){
+    $('.spot-creation-form').children('.title').first().val() === "" ? allTheFieldsAreFilled = false : console.log('field verified')
 
-    })
-    $('.spot-creation-form').css('visibility', 'hidden')
+    $('.spot-creation-form').children('.new-address').first().val() === "" ? allTheFieldsAreFilled = false : console.log('field verified')
+
+
+    $('.y-coord').text() == "" ? allTheFieldsAreFilled = false : console.log('field verified')
+
+    $('.x-coord').text() == "" ? allTheFieldsAreFilled = false : console.log('field verified')
+
+    if (allTheFieldsAreFilled==true) {
+
+      console.log('submitting creation form!')
+
+      title = form.children('.title').val();
+      description = form.children('.new-description').val();
+      address = form.children('.new-address').val();
+      latitude = parseFloat($('.y-coord').text());
+      longitude = parseFloat($('.x-coord').text());
+
+      data = {
+        title: title,
+        description: description,
+        address: address,
+        latitude: latitude,
+        longitude: longitude,
+        pov: JSON.stringify(this_pov)
+      }
+      console.log(data)
+
+      $.ajax({
+        type: 'post',
+        url: '/spots/create',
+        dataType: 'json',
+        data: data
+
+      }).done(function(serverData){
+        updateSpots();
+        spotBrowser();
+        $('.spot-creation-form').off('submit')
+      }).fail(function(){
+        alert('oh fuck spot creation failed!!')
+
+      }).always(function(){
+
+      })
+      $('.spot-creation-form').css('visibility', 'hidden')
       $('.x-coord').text('')
       $('.y-coord').text('')
       $('.spot-creation-form input').val('')
-  })
+    } else{
+      alert('fill out your fucking forms please or it fucks shit up!!')
 
+    };
+  })
 }
