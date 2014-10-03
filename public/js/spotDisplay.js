@@ -35,11 +35,21 @@ function updateSpotbyID(id){
 
   }).done(function(serverData){
     currentSpot = JSON.parse(serverData)
-    currentSpot.lat = parseInt(currentSpot.lat)
-    currentSpot.lng = parseInt(currentSpot.lng)
+    currentSpot.lat = parseFloat(currentSpot.lat)
+    currentSpot.lng = parseFloat(currentSpot.lng)
     // currentSpot.pov = JSON.parse(currentSpot.pov)
+    current_pov = JSON.parse(currentSpot.pov)
+    panorama.setPosition( new google.maps.LatLng(current_pov.position.k, current_pov.position.B))
 
-    if (currentSpot.lat)
+    heading = current_pov.pov.heading
+    pitch = current_pov.pov.pitch
+
+  panorama.setPov({
+
+    heading: heading,
+    pitch: pitch
+
+  })
     map.setCenter(new google.maps.LatLng(currentSpot.lat, currentSpot.lng))
 
 

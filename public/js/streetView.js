@@ -49,14 +49,22 @@ var setPOV = function(){
 
 
 
+
+
 $('#street-view-on').on('click', function(){
 
-  panorama.setPosition(currentSpot.pov.position)
+  panorama.setPosition( new google.maps.LatLng(current_pov.position.k, current_pov.position.B))
+
+    heading = current_pov.pov.heading
+    pitch = current_pov.pov.pitch
 
   panorama.setPov({
-    heading:0,
-    pitch:0
+
+    heading: heading,
+    pitch: pitch
+
   })
+
   map.setStreetView(panorama);
   panorama.setVisible(true)
   console.log("panorama launched:")

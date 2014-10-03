@@ -1,3 +1,6 @@
+$('#create-new-spot-button').on('click', function(){
+      spotCreator();
+})
 function spotBrowser(){
 
   google.maps.event.clearListeners(map);

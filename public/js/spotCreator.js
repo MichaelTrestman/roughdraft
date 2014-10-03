@@ -11,6 +11,7 @@ function spotCreator(){
 
 
   var this_pov;
+
   $('#pov-save-button').on('click', function(){
     this_pov = getPOV();
     current_pov = getPOV();
@@ -40,30 +41,44 @@ function spotCreator(){
   $('.spot-creation-form').on('submit', function(e){
     e.preventDefault();
 
-    var form = $(this);
-    var fields = form.children('input')
-
     var allTheFieldsAreFilled = true;
 
     // $.each(fields, function(index, field){
     //   field.val() == "" ? allTheFieldsAreFilled = false : console.log('field verified')
     // })
 
-    $('.spot-creation-form').children('.new-address').first().val() === "" ? allTheFieldsAreFilled = false : console.log('field verified')
+    // if (
+    //   (
+    //     $('.spot-creation-form').children('.new-address').first().val() === ""
+    //   ) || (
+    //     $('.spot-creation-form').children('.title').first().val() === ""
+    //   ) || (
+    //     $('.y-coord').text() === ""
+    //   ) || (
+    //     $('.x-coord').text() === ""
+    //   )
+    // ) {
+    //   allTheFieldsAreFilled = false;
+    //   console.log('field(s) missing');
+    // } else{
+    //   allTheFieldsAreFilled = true;
+    //   console.log('field verified');
+    // };
 
-    $('.spot-creation-form').children('.title').first().val() === "" ? allTheFieldsAreFilled = false : console.log('field verified')
 
-    $('.spot-creation-form').children('.new-address').first().val() === "" ? allTheFieldsAreFilled = false : console.log('field verified')
+    // $('.spot-creation-form').children('.new-address').first().val() === "" ? allTheFieldsAreFilled = false : console.log('field verified')
 
+    // $('.spot-creation-form').children('.title').first().val() === "" ? allTheFieldsAreFilled = false : console.log('field verified')
 
-    $('.y-coord').text() == "" ? allTheFieldsAreFilled = false : console.log('field verified')
+    // $('.y-coord').text() == "" ? allTheFieldsAreFilled = false : console.log('field verified')
 
-    $('.x-coord').text() == "" ? allTheFieldsAreFilled = false : console.log('field verified')
+    // $('.x-coord').text() == "" ? allTheFieldsAreFilled = false : console.log('field verified')
 
-    if (allTheFieldsAreFilled==true) {
+    if (allTheFieldsAreFilled===true) {
 
       console.log('submitting creation form!')
 
+      var form = $('.spot-creation-form')
       title = form.children('.title').val();
       description = form.children('.new-description').val();
       address = form.children('.new-address').val();
@@ -76,7 +91,7 @@ function spotCreator(){
         address: address,
         latitude: latitude,
         longitude: longitude,
-        pov: JSON.stringify(this_pov)
+        pov: JSON.stringify(current_pov)
       }
       console.log(data)
 
@@ -102,7 +117,6 @@ function spotCreator(){
       $('.spot-creation-form input').val('')
     } else{
       alert('fill out your fucking forms please or it fucks shit up!!')
-
     };
   })
 }
