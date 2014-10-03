@@ -21,7 +21,9 @@
 .new-description {
   display: block;
   height: 50%;
+  overflow-y: scroll;
   width: 70%;
+  text-align: left;
   margin: auto;
 }
 

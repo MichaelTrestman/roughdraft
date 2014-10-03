@@ -4,7 +4,7 @@ function updateSpots(){
   $.ajax({
 
   type: 'get',
-  url: '/spots/list',
+  url: '/spots/list?collection_id=#{currentCollection.id}',
   dataType: 'json',
   data: data
 
@@ -15,7 +15,7 @@ function updateSpots(){
 
     for (var i = 0; i < serverData.length; i++) {
       thisSpot = serverData[i]
-      $('#spot-list ul').append("<li id='spot-list-"+ thisSpot.id +"'>" + thisSpot.title + "</li>");
+      $('#spot-list ul').append("<li draggable='true' id='spot-list-"+ thisSpot.id +"'>" + thisSpot.title + "</li>");
     };
 
   }).always(function(){
