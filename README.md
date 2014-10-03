@@ -1,10 +1,8 @@
 functionalities to add:
 
-
-POVs attached to spots
-  but how? the prob is that not every map location can have a pov. so do you:
-    have povs be a seperate, optional aspect of a spot
-
+slide show style next/prev keyboard commands to cycle through a collection.
+also, implement collections.
+it would be rad to have keyboard shortcuts to swap around though!! that would be ill.
 
 
 

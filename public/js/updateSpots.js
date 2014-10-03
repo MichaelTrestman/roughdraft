@@ -12,6 +12,7 @@ function updateSpots(){
 
     // serverData
     $('#spot-list ul li').remove();
+
     for (var i = 0; i < serverData.length; i++) {
       thisSpot = serverData[i]
       $('#spot-list ul').append("<li id='spot-list-"+ thisSpot.id +"'>" + thisSpot.title + "</li>");

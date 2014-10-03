@@ -1,6 +1,7 @@
 $('#create-new-spot-button').on('click', function(){
       spotCreator();
 })
+
 function spotBrowser(){
 
   google.maps.event.clearListeners(map);
@@ -21,15 +22,4 @@ function spotDisplay(){
 
   $('.spot-display-panel').css('visibility', 'visible')
 
-  $('#create-new-spot-button').on('click', function(){
-      spotCreator();
-  })
 }
-$('#spot-list ul li').on('click', function(){
-
-
-
-})
-
-
-//make it so that every time you display the list of spots it clears it out so there aren't a stack of redundant ones!
