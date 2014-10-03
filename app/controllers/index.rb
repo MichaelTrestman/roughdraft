@@ -9,7 +9,8 @@ post '/spots/create' do
     :address=>params[:address],
     :title=>params[:title],
     :lng=>params[:longitude],
-    :lat=>params[:latitude]
+    :lat=>params[:latitude],
+    :pov=>params[:pov]
   )
 
   {new_spot_id: new_spot.id}.to_json
@@ -29,6 +30,7 @@ post '/spots/find' do
     description: spot.description,
     address: spot.address,
     lat: spot.lat,
-    lng: spot.lng
+    lng: spot.lng,
+    pov: spot.pov
   }.to_json
 end

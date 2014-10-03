@@ -17,7 +17,6 @@ function setSpotSelector(){
     // displaySpot(this_spot)
 
 
-
   })
 }
 
@@ -38,6 +37,7 @@ function updateSpotbyID(id){
     currentSpot = JSON.parse(serverData)
     currentSpot.lat = parseInt(currentSpot.lat)
     currentSpot.lng = parseInt(currentSpot.lng)
+    // currentSpot.pov = JSON.parse(currentSpot.pov)
 
     if (currentSpot.lat)
     map.setCenter(new google.maps.LatLng(currentSpot.lat, currentSpot.lng))

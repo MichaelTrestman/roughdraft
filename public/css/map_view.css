@@ -28,15 +28,7 @@ body,
 	background-color: rgba(65, 65, 05, .05);
 
 }
-.submit-button {
-	position: fixed;
-	bottom: 5%;
-	color: white;
-	left: 35%;
-	height: 5%;
-	width: 5%;
-	background-color: rgba(65, 65, 05, .05);
-}
+
 
 .collections{
 	position: fixed;

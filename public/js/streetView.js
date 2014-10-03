@@ -1,10 +1,28 @@
+var positionk, positionB, povHeading, povPitch;
+
 var getPOV = function(){
 
-  position = panorama.getPosition();
-  pov = panorama.getPov();
+  positionk = panorama.getPosition().k;
+  positionB = panorama.getPosition().B;
+  povHeading = panorama.getPov().heading;
+  povPitch = panorama.getPov().pitch;
 
+  var position = new google.maps.LatLng(
+    positionk,
+    positionB
+  )
+  var poV = {
+    heading: povHeading, pitch: povPitch
+  }
+
+
+  return {position: position, pov: poV}
 }
 
+var setPOV = function(){
+  panorama.setPosition(z.position);
+  panorama.setPov(z.pov);
+}
 
 
 
@@ -29,7 +47,7 @@ var getPOV = function(){
 
 $('#street-view-on').on('click', function(){
 
-  panorama.setPosition(map.getCenter())
+  panorama.setPosition(currentSpot.pov.position)
   panorama.setVisible(true)
   panorama.setPov({
     heading:0,

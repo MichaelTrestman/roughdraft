@@ -1,13 +1,26 @@
-
+var current_pov;
 
 function spotCreator(){
 
   google.maps.event.clearListeners(map);
 
+
+
+
+
+
   $('#spot-display-panel').css('visibility', 'hidden')
   $('.spot-creation-form').css('visibility', 'visible')
   $('.spot-creation-panel').css('visibility', 'visible')
 
+
+
+  var this_pov;
+  $('#pov-save-button').on('click', function(){
+    this_pov = getPOV();
+    current_pov = getPOV();
+    console.log(this_pov)
+  })
 
   google.maps.event.addListener(map, "click", function (
     event) {
@@ -45,7 +58,8 @@ function spotCreator(){
       description: description,
       address: address,
       latitude: latitude,
-      longitude: longitude
+      longitude: longitude,
+      pov: JSON.stringify(this_pov)
     }
     console.log(data)
 
