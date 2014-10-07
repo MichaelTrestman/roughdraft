@@ -1,8 +1,6 @@
 var currentSpot;
 
-function setSpotSelector(){
-
-  $('#spot-list ul').on('click', 'li', function(e){
+$('#spot-list ul').on('click', 'li', function(e){
 
     var this_id = $(this).attr('id')
     this_id = parseInt(this_id.split('-')[2]);
@@ -17,8 +15,7 @@ function setSpotSelector(){
     // displaySpot(this_spot)
 
 
-  })
-}
+})
 
 function displaySpot(spot_id){
 }
@@ -39,6 +36,7 @@ function updateSpotbyID(id){
     currentSpot.lng = parseFloat(currentSpot.lng)
     // currentSpot.pov = JSON.parse(currentSpot.pov)
     current_pov = JSON.parse(currentSpot.pov)
+
     panorama.setPosition( new google.maps.LatLng(current_pov.position.k, current_pov.position.B))
 
     heading = current_pov.pov.heading

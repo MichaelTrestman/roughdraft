@@ -11,7 +11,6 @@ function spotBrowser(){
   $('.spot-creation-panel').css('visibility', 'hidden')
   $('.spot-creation-panel form').css('visibility', 'hidden')
 
-  setSpotSelector();
 }
 
 function spotDisplay(){

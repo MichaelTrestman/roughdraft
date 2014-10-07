@@ -16,14 +16,14 @@ function addressInputOn(){
 
   $('.address-panel').css('visibility', 'visible');
 
-  $('#address-input-form').on('submit', function(event){
-
-    event.preventDefault();
-    console.log($('#address-input').val())
-    var address = $('#address-input').val()
-    codeAddress(address);
-  })
 };
+
+$('#address-input-form').on('submit', function(event){
+  event.preventDefault();
+  console.log($('#address-input').val())
+  var address = $('#address-input').val()
+  codeAddress(address);
+})
 
 
 
