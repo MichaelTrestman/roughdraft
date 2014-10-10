@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :collections
   has_many :spots, through: :collections
 
+  # nice!
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create
 
   def password
@@ -17,6 +18,7 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
   def create_new_collection(args)
+    # should this be 'self?'
     this.collections < Collection.create(
         :description=>agrs[:description]
       )
