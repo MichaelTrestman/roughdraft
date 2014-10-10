@@ -17,6 +17,8 @@
       <title> maps generator </title>
       <!-- <link rel="stylesheet" type="text/css" href="../../reset.css"> -->
       <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+
+    <!-- use consistent filenaming; either hyphens OR underscores -->
     <link rel="stylesheet" type="text/css" href="/css/map_view.css">
     <link rel="stylesheet" type="text/css" href="/css/spot-creation.css">
     <link rel="stylesheet" type="text/css" href="/css/spot-display.css">
@@ -24,16 +26,21 @@
   </head>
   <body>
     <%= yield %>
+
+    <!-- put references to CSS in head, not body -->
     <link href='http://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?v=3.exp&">
       </script>
 
 
-
+    <!-- to really blow your mind, look into JS module loaders and/or concatenation, to combine
+      these into a single file and speed up load times -->
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script src="/js/shmap1.js"></script>
     <!-- // <script src="/js/madStylez.js"></script> -->
+
+    <!-- same comment as above about consistent filenames -->
     <script src="/js/spotCreator.js"></script>
     <script src="/js/spotBrowser.js"></script>
     <script src="/js/stateSwitcher.js"></script>

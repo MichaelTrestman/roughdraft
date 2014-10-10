@@ -3,6 +3,7 @@
 	<div class="spots">
 		<h2> Spots </h2>
 		<!-- <h3>Current Collection name</h3> -->
+			<!-- use an actual <button> element for buttons -->
 			<div id="create-new-spot-button" class="button">
 				<h3>Create New Spot</h3>
 			</div>
@@ -11,6 +12,7 @@
 				<h3>List Archived Spots</h3>
 			</div>
  -->
+ 			<!-- div is unnecessary; put the id on the <ul> itself -->
 			<div id="spot-list">
 				<ul>
 				</ul>
@@ -21,6 +23,7 @@
 	<div class="collections">
 		<h2> Collections</h2>
 		<ul>
+			<!-- use button elements or links -->
 			<li class="button">
 				Create New Collection
 			</li>
@@ -35,24 +38,38 @@
 
 	<div class="spot-creation-panel">
 		<h2> Spot Creator</h2>
+		<!-- use ids for javascript hooks when possible, not classes -->
 		<button class="spot-creation-exit-button exit-button">exit</button>
 
-
+		<!-- use ids for JS hooks, as above -->
 		<form class="spot-creation-form">
 		  	<h3>Title</h3>
+
+		  <!-- i don't believe 'string' is a valid input type? -->
+		  <!-- don't need a closing <input> tag -->
 		  <input type="string" class="title spot-field" name="title">
 		  </input>
 		  <h3>Description</h3>
+
+		  <!-- i don't believe 'string' is a valid input type? also, textareas don't have
+		  	a 'type' attribute -->
 		  <textarea type="string" class="new-description spot-field" name="descripton">
 		  </textarea>
 
 		  <h3>address</h3>
+
+		  <!-- need a 'type' attribute -->
+		  <!-- don't need a closing <input> tag -->
 		  <input class="new-address spot-field" name="address"></input>
 		  <h3>link</h3>
+
+		  <!-- need a 'type' attribute -->
+		  <!-- don't need a closing <input> tag -->
 		  <input class="new-link spot-field" name="link"></input>
 
 		  <button id="pov-save-button" class="pov-save-button">save POV</button>
 
+		  <!-- don't need a closing <input> tag -->
 		  <input class="submit-button spot-field" type="submit" value="submit">
 			</input>
 		</form>
@@ -66,7 +83,12 @@
 
 	<div class="address-panel">
 		<form id="address-input-form">
+			<!-- don't use inline styles! -->
+			<!-- need a 'type' attribute -->
+			<!-- don't need a closing <input> tag -->
 			<input id="address-input" style="color: black;" name="address"></input>
+
+			<!-- don't need a closing <input> tag -->
 			<input type="submit" value="address"></input>
 		</form>
 	</div>
@@ -81,6 +103,8 @@
 
 		<p id="spot-description" class="panel-display-field">Machu Picchu (in hispanicized spelling, Spanish pronunciation: [ˈmatʃu ˈpiktʃu]) or Machu Pikchu (Quechua machu old, old person, pikchu peak; mountain or prominence with a broad base which ends in sharp peaks,[1] "old peak", pronunciation [ˈmɑtʃu ˈpixtʃu]) is a 15th-century Inca site located 2,430 metres (7,970 ft) above sea level.[2][3] It is located in the Cusco Region, Urubamba Province, Machupicchu District in Peru.[4] It is situated on a mountain ridge above the Sacred Valley which is 80 kilometres (50 mi) northwest of Cusco and through which the Urubamba River flows. Most archaeologists believe that Machu Picchu was built as an estate for the Inca emperor Pachacuti (1438–1472). Often mistakenly referred to as the "Lost City of the Incas", it is perhaps the most familiar icon of Inca civilization.</p>
 		<h3> address: <span id="address"class="panel-display-field"></span></h3>
+
+		<!-- <a> elements should have an 'href' attribute -->
 		<h3> link: <a id="link"class="panel-display-field"></a></h3>
 
 		<h3 id="latlong">lat <span class="lat"></span>| long <span class="lng"></span></h3>
