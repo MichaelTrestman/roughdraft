@@ -1,3 +1,5 @@
+/* nice use of percentage-based layouts and flexible values! */
+
 html,
 body,
 .container {
@@ -5,6 +7,9 @@ body,
 	height: 100%;
 	/*font-family: 'Libre Baskerville', serif;*/
 }
+
+/* don't forget to provide fallbacks for browsers that might have trouble rendering
+	custom fonts */
 * {font-family: 'Crimson Text', serif;}
 
 .spots{
@@ -53,8 +58,10 @@ body,
 .spots, .collections{
 	background-color: rgba(65, 65, 05, .15);
 	height: 10%;
+	/* don't forget that css animations aren't supported on older browsers */
 	-webkit-transition-duration: .4s;
 	width: 15%;
+	/* flexbox also not supported on older browsers */
 	display: flex;
 	flex-direction: column;
 }

@@ -1,3 +1,6 @@
+/* general comment: think about how to make your styles more reusable and less tailored
+  to specific elements on the page; the patterns we discussed in the CSS lecture could help! */
+
 .spot-creation-panel {
   /*display: none;*/
   position: fixed;
