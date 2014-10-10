@@ -4,6 +4,7 @@ $('#delete-spot-button').on('click', function(e){
 
     type: 'delete',
     url: '/spots/delete',
+    // same comment about content_type
     datatype: 'json',
     data: {id: currentSpot.id}
 

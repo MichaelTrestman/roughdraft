@@ -70,6 +70,7 @@ $('.spot-creation-form').on('submit', function(e){
 
     console.log('submitting creation form!')
 
+    // missing semicolon/comma, and most of these variables are global. probably not what you wanted?
     var form = $('.spot-creation-form')
     title = form.children('.title').val();
     description = form.children('.new-description').val();
@@ -92,6 +93,7 @@ $('.spot-creation-form').on('submit', function(e){
     $.ajax({
       type: 'post',
       url: '/spots/create',
+      // set content_type on server to eliminate the need for this
       dataType: 'json',
       data: data
 

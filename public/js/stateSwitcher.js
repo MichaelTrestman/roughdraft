@@ -41,6 +41,7 @@ transitionTo = {
   //   applySpotCreatorEventHandlers();
   // }
   ,
+  // don't need quotes around keys
   "spotEditor": function(){
     // applySpotEditorCSS();
     //wipe old event handlers!!!

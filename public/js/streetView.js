@@ -5,6 +5,7 @@ var positionk, positionB, povHeading, povPitch;
 
 var getPOV = function(){
 
+  // variable names could be more descriptive
   positionk = panorama.getPosition().k;
   positionB = panorama.getPosition().B;
   povHeading = panorama.getPov().heading;
@@ -48,8 +49,11 @@ var setPOV = function(){
 
 $('#street-view-on').on('click', function(){
 
+  // where is current_pov coming from? if another file, that makes it difficult to follow logic
+  //  flow within your application
   panorama.setPosition( new google.maps.LatLng(current_pov.position.k, current_pov.position.B))
 
+    // where are these defined?
     heading = current_pov.pov.heading
     pitch = current_pov.pov.pitch
 
@@ -62,6 +66,8 @@ $('#street-view-on').on('click', function(){
 
   map.setStreetView(panorama);
   panorama.setVisible(true)
+
+  // remove console.logs from production code
   console.log("panorama launched:")
   console.log(panorama)
 })
@@ -104,6 +110,7 @@ function streetView(){
     }
   };
 
+  // you're already loading jquery anyway; use it instead of raw DOM!
   var panorama = new google.maps.StreetViewPanorama(document.getElementById("map-canvas"), panoramaOptions);
   map.setStreetView(panorama);
 }

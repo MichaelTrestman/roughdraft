@@ -2,6 +2,7 @@ var currentSpot;
 
 $('#spot-list ul').on('click', 'li', function(e){
 
+    // could chain this into one line instead of two
     var this_id = $(this).attr('id')
     this_id = parseInt(this_id.split('-')[2]);
 
@@ -17,6 +18,7 @@ $('#spot-list ul').on('click', 'li', function(e){
 
 })
 
+// now that's a good function!
 function displaySpot(spot_id){
 }
 
@@ -27,10 +29,13 @@ function updateSpotbyID(id){
 
     type: 'post',
     url: '/spots/find',
+    // set content_type on server to eliminate the need for this
     datatype: 'json',
     data: {id: id}
 
+    // TONS of logic in the 'done' callback; separate it out into 3-4 different functions
   }).done(function(serverData){
+    // use of global variables make logic flow difficult to follow
     currentSpot = JSON.parse(serverData)
     currentSpot.lat = parseFloat(currentSpot.lat)
     currentSpot.lng = parseFloat(currentSpot.lng)
